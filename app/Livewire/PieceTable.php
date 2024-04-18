@@ -72,7 +72,7 @@ final class PieceTable extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::make('ID', 'id')->sortable(),
+            // Column::make('ID', 'id')->sortable(),
             Column::make('Référence', 'reference')->searchable()->sortable()->editOnClick(),
             Column::make('Désignation', 'designation')->searchable()->sortable()->editOnClick(),
             Column::make('Marque', 'marque')->sortable()->editOnClick(),
