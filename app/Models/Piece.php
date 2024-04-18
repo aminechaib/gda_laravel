@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Piece extends Model
 {
+    public $timestamps = false;
     use HasFactory;
     protected $fillable = [
-        'reference','designation','marque','prix','date' // Add 'reference' here
+        'reference','designation','marque','fournisseur','prix','date' // Add 'reference' here
         // Other fillable properties (if any)
     ];
 

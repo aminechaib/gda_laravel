@@ -96,6 +96,7 @@ final class PieceTable extends PowerGridComponent
             Filter::inputText('reference'),
             Filter::inputText('designation'),
             Filter::inputText('fournisseur'),
+            Filter::inputText('date'),
         ];
     }
 
