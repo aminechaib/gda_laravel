@@ -1,6 +1,6 @@
 <div>
     <input type="text" wire:model.defer="search" placeholder="Search by reference..." class="form-control"/>
-    <button wire:click="doSearch">Search</button>
+    <button wire:click="doSearch">dddddddddddSearch</button>
 
     <table class="table table-bordered">
         <thead>

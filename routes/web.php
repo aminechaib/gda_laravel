@@ -26,5 +26,9 @@ Route::get('/pieces', function () {
     return view('piece');
 })->name('pieces');
 
+use App\Http\Controllers\PostController;
+
+Route::get('/form', [PostController::class, 'index']);
+Route::post('/dashboard', [PostController::class, 'store']);
 
 

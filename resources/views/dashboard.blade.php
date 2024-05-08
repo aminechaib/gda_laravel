@@ -13,7 +13,9 @@
                     <form action="/import-excel" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="excel_file" accept=".xlsx,.xls" required>
-                        <button type="submit">Import</button>
+                        <input type="date"name="input_date" required>
+                        <button class="button-20" type="submit">Import</button>
+                        <!-- HTML !-->
                     </form>
                     @if (session('success'))
                         <div class="alert alert-success">
