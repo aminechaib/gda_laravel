@@ -9,6 +9,7 @@
         <div class="">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+                    {{-- <livewire:searching /> --}}
                     <form action="/import-excel" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="excel_file" accept=".xlsx,.xls" required>
