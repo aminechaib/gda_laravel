@@ -1,1 +1,1 @@
-<img src="favico.png" style="width: 15%" alt="">
+<img src="favico.png" style="width: 130px" alt="">
