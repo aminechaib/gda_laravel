@@ -20,6 +20,7 @@ class ExcelController extends Controller
         $file = $request->file('excel_file');
         // Get the input date from the request
         $inputDate = $request->input('input_date');
+        $inputsupplier = $request->input('input_supplier');
 
         // Load the Excel file using PhpSpreadsheet
         $spreadsheet = IOFactory::load($file->getPathname());
@@ -42,11 +43,15 @@ class ExcelController extends Controller
 
             // Add row data to the batch array using the input date
             $batchData[] = [
-                'reference' => $rowData[0],
-                'designation' => $rowData[1],
-                'marque' => $rowData[2],
-                'prix' => $rowData[3],
-                'fournisseur' => $rowData[4],
+                'reference oem' => $rowData[0],
+                'reference' => $rowData[1],
+                'designation' => $rowData[2],
+                'marque' => $rowData[3],
+                'quantity' => $rowData[4],
+                'prix' => $rowData[5],
+                'prix_remiser' => $rowData[6],
+                'prix_total' => $rowData[7],
+                'fournisseur' => $inputsupplier,
                 'date' => $inputDate,  // Use the input date here
                 // Add more fields as needed
             ];

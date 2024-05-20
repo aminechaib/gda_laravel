@@ -59,10 +59,13 @@ final class PieceTable extends PowerGridComponent
     {
         return PowerGrid::fields()
             ->add('id')
+            ->add('reference oem')
             ->add('reference')
             ->add('designation')
             ->add('marque')
             ->add('prix')
+            ->add('quantity')
+            ->add('prix_total')
             ->add('fournisseur')
             ->add('date', function (Piece $model) {
                 return Carbon::parse($model->date)->format('Y-m-d');  // Format date
@@ -74,11 +77,15 @@ final class PieceTable extends PowerGridComponent
         return [
             // Column::make('ID', 'id')->sortable(),
             Column::make('Référence', 'reference')->searchable()->sortable()->editOnClick(),
+            Column::make('Référence OEM', 'reference oem')->searchable()->sortable()->editOnClick(),
             Column::make('Désignation', 'designation')->searchable()->sortable()->editOnClick(),
-            Column::make('Marque', 'marque')->sortable()->editOnClick(),
-            Column::make('Prix', 'prix')->editOnClick(),
-            Column::make('Fournisseur', 'fournisseur')->sortable()->editOnClick(),
-            Column::make('Date', 'date')->sortable()->editOnClick(),
+            Column::make('Marque', 'marque')->searchable()->sortable()->editOnClick(),
+            Column::make('Prix', 'prix')->searchable()->editOnClick(),
+            Column::make('Prix Remiser', 'prix_remiser')->searchable()->editOnClick(),
+            Column::make('Quantity', 'quantity')->searchable()->editOnClick(),
+            Column::make('Montant Total', 'prix_total')->searchable()->editOnClick(),
+            Column::make('Fournisseur', 'fournisseur')->searchable()->sortable()->editOnClick(),
+            Column::make('Date', 'date')->searchable()->sortable()->editOnClick(),
             Column::action('Action')
                 ->add(Button::add('edit')
                     ->slot('Edit: {{ $id }}')

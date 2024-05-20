@@ -4,6 +4,8 @@
             @csrf
             <input class="button-20" type="file" name="excel_file" accept=".xlsx,.xls" required>
             <input class="button-20" type="date"name="input_date" required>
+            <label for="">Fournisseur</label>
+            <input class="button-20" type="text"name="input_supplier" required>
             <button class="button-20" type="submit">Import</button>
             <!-- HTML !-->
         </form>

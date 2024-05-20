@@ -10,7 +10,7 @@ class Piece extends Model
     public $timestamps = false;
     use HasFactory;
     protected $fillable = [
-        'reference','designation','marque','fournisseur','prix','date' // Add 'reference' here
+        'reference','reference oem','designation','marque','fournisseur','prix_remiser','prix_total','quantity','prix','date' // Add 'reference' here
         // Other fillable properties (if any)
     ];
 

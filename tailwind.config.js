@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
+// tailwind.config.js
+
 module.exports = {
     content: [
         './resources/**/*.blade.php',

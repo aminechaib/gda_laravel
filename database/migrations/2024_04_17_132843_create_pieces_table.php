@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('pieces', function (Blueprint $table) {
             $table->id();
+            $table->string('reference oem');
             $table->string('reference');
             $table->string('designation');
             $table->string('marque');
+            $table->string('quantity');
             $table->string('prix');
+            $table->string('prix_total');
+            $table->string('prix_remiser');
             $table->string('fournisseur');
             $table->date('date');
             $table->timestamps();
