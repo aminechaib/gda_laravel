@@ -38,7 +38,7 @@ class ExcelController extends Controller
 
             $rowData = [];
             foreach ($cellIterator as $cell) {
-                $rowData[] = $cell->getValue();
+                $rowData[] = $cell->getCalculatedValue();
             }
 
             // Add row data to the batch array using the input date
@@ -71,4 +71,6 @@ class ExcelController extends Controller
         // Return a response
         return redirect()->route('dashboard')->with('success', 'File imported successfully.');
     }
+
+    
 }
