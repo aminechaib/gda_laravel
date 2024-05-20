@@ -13,19 +13,20 @@ return new class extends Migration
     {
         Schema::create('pieces', function (Blueprint $table) {
             $table->id();
-            $table->string('reference oem');
-            $table->string('reference');
-            $table->string('designation');
-            $table->string('marque');
-            $table->string('quantity');
-            $table->string('prix');
-            $table->string('prix_total');
-            $table->string('prix_remiser');
-            $table->string('fournisseur');
-            $table->date('date');
+            $table->string('reference oem')->nullable();
+            $table->string('reference')->nullable();
+            $table->string('designation')->nullable();
+            $table->string('marque')->nullable();
+            $table->string('quantity')->nullable();
+            $table->string('prix')->nullable();
+            $table->string('prix_total')->nullable();
+            $table->string('prix_remiser')->nullable();
+            $table->string('fournisseur')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }
+    
     
 
     /**
