@@ -3,7 +3,7 @@
         <form action="/import-excel" method="POST" enctype="multipart/form-data" class="form-container">
             @csrf
             <div class="form-group">
-                <input type="file" name="excel_file" accept=".xlsx,.xls" required>
+                <input type="file" name="excel_file"  accept=".xlsx,.xls" required>
             </div>
             <div class="form-group">
                 <input type="date" name="input_date" required>
@@ -42,9 +42,9 @@
     align-items: center; /* Vertically centers the items */
     width:100%; /* Full width */
     padding: 20px;
-    border: 1px solid #ccc;
+   
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .download-link {
@@ -64,7 +64,7 @@ input[type="file"], input[type="date"], input[type="text"], .submit-button {
     border-radius: 4px;
 }
 
-input[type="file"], input[type="date"], input[type="text"] {
+ input[type="date"], input[type="text"] {
     width: 200px; /* Fixed width for input fields */
 }
 

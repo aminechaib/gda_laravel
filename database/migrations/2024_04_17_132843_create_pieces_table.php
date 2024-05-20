@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('quantity')->nullable();
             $table->string('prix')->nullable();
             $table->string('prix_total')->nullable();
-            $table->string('prix_remiser')->nullable();
+            // $table->string('prix_remiser')->nullable();
             $table->string('fournisseur')->nullable();
             $table->date('date')->nullable();
             $table->timestamps();

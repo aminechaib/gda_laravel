@@ -54,8 +54,8 @@ class ExcelController extends Controller
                 'marque' => $rowData[3] ?? null,
                 'quantity' => $rowData[4] ?? null,
                 'prix' => $rowData[5] ?? null,
-                'prix_remiser' => $rowData[6] ?? null,
-                'prix_total' => $rowData[7] ?? null,
+                // 'prix_remiser' => $rowData[6] ?? null,
+                'prix_total' => $rowData[6] ?? null,
                 'fournisseur' => $inputsupplier,
                 'date' => $inputDate,  // Use the input date here
                 // Add more fields as needed
@@ -74,6 +74,6 @@ class ExcelController extends Controller
         }
 
         // Return a response
-        return redirect()->route('dashboard')->with('success', 'File imported successfully.');
+        return redirect()->route('dashboard')->with('success', 'Fichier importé avec succès.');
     }
 }

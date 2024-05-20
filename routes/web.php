@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExcelController;
-
+use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    if (auth()->check()) {
+        return redirect()->route('dashboard');
+    }
+    return redirect()->route('login');
 });
 
 Route::get('/dashboard', function () {
@@ -26,9 +29,5 @@ Route::get('/pieces', function () {
     return view('piece');
 })->name('pieces');
 
-use App\Http\Controllers\PostController;
-
 Route::get('/form', [PostController::class, 'index']);
 Route::post('/dashboard', [PostController::class, 'store']);
-
-
