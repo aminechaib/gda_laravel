@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Piece;
@@ -28,6 +27,12 @@ class ExcelController extends Controller
         // Get the active sheet (first sheet)
         $sheet = $spreadsheet->getActiveSheet();
 
+        // Check if there are enough rows in the sheet
+        $highestRow = $sheet->getHighestRow();
+        if ($highestRow < 2) {
+            return redirect()->route('dashboard')->with('error', 'The Excel file does not contain enough rows.');
+        }
+
         // Prepare a batch array to store row data
         $batchData = [];
 
@@ -43,14 +48,14 @@ class ExcelController extends Controller
 
             // Add row data to the batch array using the input date
             $batchData[] = [
-                'reference oem' => $rowData[0],
-                'reference' => $rowData[1],
-                'designation' => $rowData[2],
-                'marque' => $rowData[3],
-                'quantity' => $rowData[4],
-                'prix' => $rowData[5],
-                'prix_remiser' => $rowData[6],
-                'prix_total' => $rowData[7],
+                'reference oem' => $rowData[0] ?? null,
+                'reference' => $rowData[1] ?? null,
+                'designation' => $rowData[2] ?? null,
+                'marque' => $rowData[3] ?? null,
+                'quantity' => $rowData[4] ?? null,
+                'prix' => $rowData[5] ?? null,
+                'prix_remiser' => $rowData[6] ?? null,
+                'prix_total' => $rowData[7] ?? null,
                 'fournisseur' => $inputsupplier,
                 'date' => $inputDate,  // Use the input date here
                 // Add more fields as needed
@@ -71,6 +76,4 @@ class ExcelController extends Controller
         // Return a response
         return redirect()->route('dashboard')->with('success', 'File imported successfully.');
     }
-
-    
 }

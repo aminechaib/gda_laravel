@@ -99,10 +99,11 @@ final class PieceTable extends PowerGridComponent
     public function filters(): array
     {
         return [
-            Filter::inputText('marque'),
             Filter::inputText('reference'),
+            Filter::inputText('reference oem'),
             Filter::inputText('designation'),
             Filter::inputText('fournisseur'),
+            Filter::inputText('marque'),
             Filter::inputText('date'),
         ];
     }
